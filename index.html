@@ -1952,7 +1952,9 @@
       </div>
     </div>
 
-    <div class="zona-card reveal reveal-delay-2">
+    <div class="zona-card reveal reveal-delay-2" itemscope itemtype="https://schema.org/RealEstateAgent">
+      <meta itemprop="name" content="Inmobiliaria Tello">
+      <meta itemprop="telephone" content="+34631165889">
       <div class="zona-info">
         <div class="zona-info-row">
           <div class="zona-icon">📍</div>
@@ -2018,17 +2020,17 @@
 
     <div class="cta-datos">
       <a href="tel:+34631165889" class="cta-dato">📞 631 165 889</a>
-      <div class="cta-dato">📍 Carrer dels Reis Catòlics 31b, Sabadell</div>
+      <div class="cta-dato">📍 Carrer dels Reis Catòlics, 31b · 08204 Sabadell</div>
       <div class="cta-dato">🕐 Lu–Vi 10:00–14:00 · 17:00–20:00</div>
     </div>
   </div>
 </section>
 
 
-<!-- FOOTER -->
-<footer>
+<!-- FOOTER con microdata NAP para crawlers -->
+<footer itemscope itemtype="https://schema.org/RealEstateAgent">
   <div class="footer-logo">
-    Inmobiliaria <strong style="margin-left:0.3rem;">Tello</strong>
+    <span itemprop="name">Inmobiliaria <strong style="margin-left:0.3rem;">Tello</strong></span>
     <span class="logo-dot dot"></span>
   </div>
   <div class="footer-mid">
@@ -2037,6 +2039,15 @@
     <a href="#faq">FAQ</a>
     <a href="#contacto">Contacto</a>
   </div>
+  <!-- NAP oculto para crawlers — consistencia algorítmica -->
+  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" style="display:none;">
+    <span itemprop="streetAddress">Carrer dels Reis Catòlics, 31b</span>
+    <span itemprop="addressLocality">Sabadell</span>
+    <span itemprop="addressRegion">Barcelona</span>
+    <span itemprop="postalCode">08204</span>
+    <span itemprop="addressCountry">ES</span>
+  </div>
+  <span itemprop="telephone" style="display:none;">+34631165889</span>
   <p>© 2026 Inmobiliaria Tello — Hipotecas en Sabadell · 631 165 889</p>
 </footer>
 
