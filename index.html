@@ -77,6 +77,23 @@
     -webkit-font-smoothing: antialiased;
   }
 
+
+  /* ACCESIBILIDAD — Skip link para navegación con teclado */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    background: var(--oro);
+    color: var(--noir);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.875rem;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 1rem; }
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--crema); }
   ::-webkit-scrollbar-thumb { background: var(--oro); border-radius: 2px; }
@@ -138,7 +155,7 @@
 
   .hero-h1 { font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 5.2rem); line-height: 1.0; color: var(--blanco); font-weight: 700; margin-bottom: 0.5rem; animation: slideUp 0.9s ease 0.1s both; }
   .hero-h1-sub { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.5vw, 2.4rem); line-height: 1.2; color: var(--oro); font-weight: 400; font-style: italic; margin-bottom: 2.5rem; animation: slideUp 0.9s ease 0.15s both; }
-  .hero-desc { color: rgba(255,255,255,0.72); font-size: 1.05rem; line-height: 1.85; font-weight: 300; max-width: 420px; margin-bottom: 3rem; animation: slideUp 0.9s ease 0.2s both; }
+  .hero-desc { color: rgba(255,255,255,0.88); font-size: 1.05rem; line-height: 1.85; font-weight: 300; max-width: 420px; margin-bottom: 3rem; animation: slideUp 0.9s ease 0.2s both; }
   .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; animation: slideUp 0.9s ease 0.25s both; }
 
   .btn-oro { background: var(--oro); color: var(--noir); padding: 1rem 2.2rem; font-weight: 600; font-size: 0.9rem; text-decoration: none; border-radius: var(--radius); transition: all var(--transition); display: inline-flex; align-items: center; gap: 0.5rem; letter-spacing: 0.2px; }
@@ -152,7 +169,7 @@
   .hero-kpi:last-child { border-right: none; padding-right: 0; padding-left: 1.5rem; }
   .hero-kpi:nth-child(2) { padding-left: 1.5rem; }
   .kpi-num { font-family: var(--font-serif); font-size: 2.6rem; font-weight: 700; color: var(--oro); line-height: 1; display: block; margin-bottom: 0.3rem; }
-  .kpi-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); letter-spacing: 0.5px; line-height: 1.4; }
+  .kpi-label { font-size: 0.72rem; color: rgba(255,255,255,0.75); letter-spacing: 0.5px; line-height: 1.4; }
 
   .hero-right { position: relative; background: var(--crema); overflow: hidden; display: flex; align-items: center; justify-content: center; }
   .hero-right-bg { position: absolute; inset: 0; background: linear-gradient(160deg, var(--crema-2) 0%, var(--crema) 100%); }
@@ -195,7 +212,7 @@
   .porque-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
   .porque-h2 { font-family: var(--font-serif); font-size: clamp(2.2rem, 3.5vw, 3.6rem); font-weight: 700; line-height: 1.05; color: var(--blanco); margin-bottom: 1.5rem; }
   .porque-h2 em { font-style: italic; color: var(--oro); }
-  .porque-lead { color: rgba(255,255,255,0.45); font-size: 1rem; line-height: 1.85; font-weight: 300; margin-bottom: 2.5rem; }
+  .porque-lead { color: rgba(255,255,255,0.72); font-size: 1rem; line-height: 1.85; font-weight: 300; margin-bottom: 2.5rem; }
   .porque-cta { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--oro); font-size: 0.875rem; font-weight: 500; text-decoration: none; border-bottom: 1px solid rgba(196,163,90,0.3); padding-bottom: 0.2rem; transition: all var(--transition); }
   .porque-cta:hover { color: var(--oro-claro); border-color: var(--oro-claro); }
   .porque-features { display: flex; flex-direction: column; gap: 0; }
@@ -204,7 +221,7 @@
   .feature-item:last-child { border-bottom: none; padding-bottom: 0; }
   .feature-num { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: rgba(196,163,90,0.3); line-height: 1; flex-shrink: 0; width: 36px; }
   .feature-item h4 { color: var(--blanco); font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
-  .feature-item p { color: rgba(255,255,255,0.42); font-size: 0.875rem; line-height: 1.7; font-weight: 300; }
+  .feature-item p { color: rgba(255,255,255,0.72); font-size: 0.875rem; line-height: 1.7; font-weight: 300; }
 
   .hipotecas { padding: 9rem 4rem; background: var(--crema); }
   .hipotecas-inner { max-width: 1280px; margin: 0 auto; }
@@ -215,8 +232,8 @@
   .hipoteca-card:hover { transform: translateY(-5px); box-shadow: 0 25px 60px rgba(0,0,0,0.08); border-color: rgba(196,163,90,0.3); }
   .hipoteca-card.featured { background: var(--noir); border-color: var(--noir); }
   .hipoteca-card.featured h3, .hipoteca-card.featured li, .hipoteca-card.featured p { color: var(--blanco) !important; }
-  .hipoteca-card.featured li { color: rgba(255,255,255,0.7) !important; }
-  .hipoteca-card.featured p { color: rgba(255,255,255,0.5) !important; }
+  .hipoteca-card.featured li { color: rgba(255,255,255,0.88) !important; }
+  .hipoteca-card.featured p { color: rgba(255,255,255,0.80) !important; }
   .hipoteca-badge { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 3px; margin-bottom: 1.8rem; }
   .hipoteca-badge.badge-default { background: var(--crema-2); color: var(--gris-2); }
   .hipoteca-badge.badge-featured { background: var(--oro); color: var(--noir); }
@@ -245,7 +262,7 @@
   .zona-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center; }
   .zona-h2 { font-family: var(--font-serif); font-size: clamp(2.2rem, 3.5vw, 3.4rem); font-weight: 700; line-height: 1.05; color: var(--blanco); margin-bottom: 1.5rem; }
   .zona-h2 em { font-style: italic; color: var(--oro); }
-  .zona-desc { color: rgba(255,255,255,0.45); font-size: 1rem; line-height: 1.85; font-weight: 300; margin-bottom: 2.5rem; }
+  .zona-desc { color: rgba(255,255,255,0.72); font-size: 1rem; line-height: 1.85; font-weight: 300; margin-bottom: 2.5rem; }
   .zona-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
   .zona-tag { border: 1px solid rgba(196,163,90,0.3); color: rgba(196,163,90,0.85); padding: 0.4rem 1rem; border-radius: 3px; font-size: 0.8rem; font-weight: 400; transition: all var(--transition); }
   .zona-tag:hover { background: rgba(196,163,90,0.1); border-color: var(--oro); color: var(--oro); }
@@ -256,12 +273,12 @@
   .zona-info-row:last-child { border-bottom: none; padding-bottom: 0; }
   .zona-icon { width: 38px; height: 38px; background: rgba(196,163,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
   .zona-info-row h4 { color: var(--blanco); font-size: 0.875rem; font-weight: 500; margin-bottom: 0.35rem; }
-  .zona-info-row p { color: rgba(255,255,255,0.38); font-size: 0.85rem; font-weight: 300; line-height: 1.5; }
+  .zona-info-row p { color: rgba(255,255,255,0.72); font-size: 0.85rem; font-weight: 300; line-height: 1.5; }
   .zona-map-placeholder { height: 180px; background: var(--noir-3); display: flex; align-items: center; justify-content: center; border-top: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; cursor: pointer; text-decoration: none; }
   .zona-map-placeholder::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 30px 30px; }
   .zona-map-pin { position: relative; z-index: 2; text-align: center; }
   .zona-map-pin span { display: block; font-size: 2rem; margin-bottom: 0.5rem; }
-  .zona-map-pin p { color: rgba(255,255,255,0.4); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; }
+  .zona-map-pin p { color: rgba(255,255,255,0.72); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; }
 
   .cta-section { padding: 10rem 4rem; background: var(--crema); text-align: center; position: relative; overflow: hidden; }
   .cta-section::before { content: 'TELLO'; position: absolute; font-family: var(--font-serif); font-size: 22vw; font-weight: 900; color: rgba(0,0,0,0.025); top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; white-space: nowrap; letter-spacing: -2px; }
@@ -282,9 +299,9 @@
   .footer-logo { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600; color: var(--blanco); display: flex; align-items: center; gap: 0.5rem; }
   .footer-logo .dot { background: var(--oro); }
   .footer-mid { display: flex; gap: 2rem; }
-  .footer-mid a { color: rgba(255,255,255,0.3); font-size: 0.82rem; text-decoration: none; transition: color var(--transition); }
+  .footer-mid a { color: rgba(255,255,255,0.65); font-size: 0.82rem; text-decoration: none; transition: color var(--transition); }
   .footer-mid a:hover { color: rgba(255,255,255,0.7); }
-  footer > p { color: rgba(255,255,255,0.2); font-size: 0.8rem; font-weight: 300; }
+  footer > p { color: rgba(255,255,255,0.55); font-size: 0.8rem; font-weight: 300; }
 
   .wa-float { position: fixed; bottom: 2rem; right: 2rem; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 8px 30px rgba(37,211,102,0.45); z-index: 999; transition: transform var(--transition); animation: waPulse 2.5s infinite; }
   .wa-float:hover { transform: scale(1.1); animation: none; }
@@ -331,18 +348,21 @@
 </head>
 <body>
 
-<nav id="mainNav">
+<!-- ACCESIBILIDAD: Saltar al contenido principal (teclado) -->
+<a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+<nav id="mainNav" role="navigation" aria-label="Navegación principal">
   <a href="#" class="logo">Inmobiliaria <strong>Tello</strong><span class="logo-dot"></span></a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navMenu" role="list">
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#hipotecas">Hipotecas</a></li>
     <li><a href="#zona">Sabadell</a></li>
     <li><a href="#faq">Preguntas</a></li>
     <li><a href="#contacto" class="nav-cta">Valoración Gratis</a></li>
   </ul>
-  <div class="nav-hamburger" aria-label="Menú"><span></span><span></span><span></span></div>
+  <button class="nav-hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navMenu" type="button"><span></span><span></span><span></span></button>
 </nav>
 
+<main id="contenido-principal">
 <section class="hero" aria-label="Portada Inmobiliaria Tello Sabadell">
   <div class="hero-left">
     <div class="hero-tag"><div class="hero-tag-line"></div><span>Inmobiliaria en Sabadell · Desde 2004</span></div>
@@ -457,15 +477,15 @@
       <h2 class="section-h2">Todo lo que necesitas saber<br>sobre <em>Inmobiliaria Tello</em></h2>
     </div>
     <div class="faq-list reveal">
-      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><h3 class="faq-h3">¿Qué es Inmobiliaria Tello y dónde está en Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Inmobiliaria Tello, también conocida como Gestiones Tello, es una agencia inmobiliaria ubicada en Carrer dels Reis Catòlics 31b, Sabadell (08204), en el barrio de Creu de Barberà. Llevamos más de 20 años ayudando a vecinos de Sabadell a vender y comprar pisos, y a conseguir hipotecas en las mejores condiciones. Llámanos: 631 165 889.</p></div></div>
-      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><h3 class="faq-h3">¿En qué zonas de Sabadell opera Inmobiliaria Tello?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Inmobiliaria Tello opera en toda la ciudad de Sabadell, con especial especialización en los barrios de Creu de Barberà, Campoamor, Centre, Can Rull, Ca n'Oriac, Gràcia y Torre-romeu. También gestionamos operaciones en todo el Vallès Occidental.</p></div></div>
-      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><h3 class="faq-h3">¿Qué servicios ofrece Inmobiliaria Tello en Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Inmobiliaria Tello ofrece: venta de pisos en Sabadell con gestión completa, hipotecas personalizadas sin coste adicional, valoración gratuita de propiedades, compra de pisos con acceso a cartera exclusiva, gestión de trámites notariales y legales, y asesoramiento inmobiliario personalizado. Todo desde un único punto de contacto.</p></div></div>
-      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><h3 class="faq-h3">¿Qué diferencia a Inmobiliaria Tello de otras inmobiliarias de Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Inmobiliaria Tello se diferencia por tres razones clave: primero, somos de los pocos en Sabadell que gestionan tanto la venta del piso como la hipoteca, todo bajo el mismo techo. Segundo, trabajamos sin permanencia. Tercero, llevamos más de 20 años en el barrio de Creu de Barberà, con conocimiento real del mercado local.</p></div></div>
-      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><h3 class="faq-h3">¿Cuál es la mejor inmobiliaria en Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Inmobiliaria Tello es una de las inmobiliarias más valoradas de Sabadell, con una puntuación de 4.9 sobre 5. Ofrecemos valoración gratuita, gestión completa de la venta e hipotecas personalizadas sin coste adicional. Llámanos al 631 165 889.</p></div></div>
-      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><h3 class="faq-h3">¿Hay inmobiliaria cerca de mí en Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Sí. Inmobiliaria Tello está en Carrer dels Reis Catòlics 31b, Sabadell, en pleno barrio de Creu de Barberà. Abierto de lunes a viernes 10:00–14:00 y 17:00–20:00, y sábados 10:00–14:00.</p></div></div>
-      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><h3 class="faq-h3">¿Cómo vender mi piso en Sabadell rápido?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Contacta con Inmobiliaria Tello. Ofrecemos valoración gratuita, fotografía profesional, difusión en los principales portales y acceso a una red de compradores activos. Llama al 631 165 889 o escríbenos por WhatsApp.</p></div></div>
-      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><h3 class="faq-h3">¿Cómo conseguir una hipoteca en Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Inmobiliaria Tello gestiona hipotecas personalizadas en Sabadell sin coste adicional. Negociamos directamente con varios bancos y te acompañamos desde el estudio de viabilidad hasta la firma ante notario.</p></div></div>
-      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><h3 class="faq-h3">¿Dónde puedo vender mi piso rápido en Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>En Inmobiliaria Tello, en Carrer dels Reis Catòlics 31b, Sabadell. Combinamos una red activa de compradores, valoración realista desde el primer día y difusión inmediata en los principales portales. Llama al 631 165 889.</p></div></div>
+      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><span class="faq-h3" role="heading" aria-level="3">¿Qué es Inmobiliaria Tello y dónde está en Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Inmobiliaria Tello, también conocida como Gestiones Tello, es una agencia inmobiliaria ubicada en Carrer dels Reis Catòlics 31b, Sabadell (08204), en el barrio de Creu de Barberà. Llevamos más de 20 años ayudando a vecinos de Sabadell a vender y comprar pisos, y a conseguir hipotecas en las mejores condiciones. Llámanos: 631 165 889.</p></div></div>
+      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><span class="faq-h3" role="heading" aria-level="3">¿En qué zonas de Sabadell opera Inmobiliaria Tello?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Inmobiliaria Tello opera en toda la ciudad de Sabadell, con especial especialización en los barrios de Creu de Barberà, Campoamor, Centre, Can Rull, Ca n'Oriac, Gràcia y Torre-romeu. También gestionamos operaciones en todo el Vallès Occidental.</p></div></div>
+      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><span class="faq-h3" role="heading" aria-level="3">¿Qué servicios ofrece Inmobiliaria Tello en Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Inmobiliaria Tello ofrece: venta de pisos en Sabadell con gestión completa, hipotecas personalizadas sin coste adicional, valoración gratuita de propiedades, compra de pisos con acceso a cartera exclusiva, gestión de trámites notariales y legales, y asesoramiento inmobiliario personalizado. Todo desde un único punto de contacto.</p></div></div>
+      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><span class="faq-h3" role="heading" aria-level="3">¿Qué diferencia a Inmobiliaria Tello de otras inmobiliarias de Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Inmobiliaria Tello se diferencia por tres razones clave: primero, somos de los pocos en Sabadell que gestionan tanto la venta del piso como la hipoteca, todo bajo el mismo techo. Segundo, trabajamos sin permanencia. Tercero, llevamos más de 20 años en el barrio de Creu de Barberà, con conocimiento real del mercado local.</p></div></div>
+      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><span class="faq-h3" role="heading" aria-level="3">¿Cuál es la mejor inmobiliaria en Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Inmobiliaria Tello es una de las inmobiliarias más valoradas de Sabadell, con una puntuación de 4.9 sobre 5. Ofrecemos valoración gratuita, gestión completa de la venta e hipotecas personalizadas sin coste adicional. Llámanos al 631 165 889.</p></div></div>
+      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><span class="faq-h3" role="heading" aria-level="3">¿Hay inmobiliaria cerca de mí en Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Sí. Inmobiliaria Tello está en Carrer dels Reis Catòlics 31b, Sabadell, en pleno barrio de Creu de Barberà. Abierto de lunes a viernes 10:00–14:00 y 17:00–20:00, y sábados 10:00–14:00.</p></div></div>
+      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><span class="faq-h3" role="heading" aria-level="3">¿Cómo vender mi piso en Sabadell rápido?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Contacta con Inmobiliaria Tello. Ofrecemos valoración gratuita, fotografía profesional, difusión en los principales portales y acceso a una red de compradores activos. Llama al 631 165 889 o escríbenos por WhatsApp.</p></div></div>
+      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><span class="faq-h3" role="heading" aria-level="3">¿Cómo conseguir una hipoteca en Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>Inmobiliaria Tello gestiona hipotecas personalizadas en Sabadell sin coste adicional. Negociamos directamente con varios bancos y te acompañamos desde el estudio de viabilidad hasta la firma ante notario.</p></div></div>
+      <div class="faq-item"><button class="faq-trigger" onclick="openFaq(this)" aria-expanded="false"><span class="faq-h3" role="heading" aria-level="3">¿Dónde puedo vender mi piso rápido en Sabadell?</h3><div class="faq-plus">+</div></button><div class="faq-body"><p>En Inmobiliaria Tello, en Carrer dels Reis Catòlics 31b, Sabadell. Combinamos una red activa de compradores, valoración realista desde el primer día y difusión inmediata en los principales portales. Llama al 631 165 889.</p></div></div>
     </div>
   </div>
 </section>
@@ -512,6 +532,7 @@
   </div>
 </section>
 
+</main>
 <footer itemscope itemtype="https://schema.org/RealEstateAgent">
   <div class="footer-logo"><span itemprop="name">Inmobiliaria <strong style="margin-left:0.3rem;">Tello</strong></span><span class="logo-dot dot"></span></div>
   <div class="footer-mid"><a href="#servicios">Servicios</a><a href="#hipotecas">Hipotecas</a><a href="#faq">FAQ</a><a href="#contacto">Contacto</a></div>
